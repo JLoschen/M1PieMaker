@@ -1,0 +1,12 @@
+# M1 Finance Pie Creator
+This console app creates pies for the stock broker M1 finance based off stocks recommended by the Motley Fool Rule Breakers service. Each month Motley Fool gives 2 new stock recommendations and 5 'Best Buys Now' which are stocks they've previously recommended that they are re-recommending. 
+
+## Weightings
+The app weights a Best Buy Now at roughly 1/5th the weighting of a new recommendation (since there are 5 of them at a time). It also weights more recent recommendations slightly higher than recommendations from further in the past since when Motley Fool recommends a stock they are saying to buy it ASAP, so sooner is better. Finally the app weights based off the [conviction](https://www.fool.com/premium/screener/) ranking which is created by the Motley Fool's proprietory algorithm, as far as I can tell it's basically a ranking of all the stocks they've recommended.
+
+[M1 Finance Portfolio created by this](https://dashboard.m1finance.com/share/H4sIAAAAAAACA61YTW-bQBD9K4hTK-XAh7HTSDlQQxWkLtQ2VEJVVCHYkLUxWIANJsp_79BLJe-2HtY9WUYM2nkz896bfVPb84GqD2pJu58HRtU7tUz244N11b4q3tqGJ03BUtqoDz_e1LZSH97-GvM1qXOqLJODEtL0VfngsBPLaJk1H__xlYamx5q1Z3iFZfA_0r47wdbTyJA_qu936oHWKS3bJIeXZ9r7HTY8tLnwufb-fPHI5D7IZeWWtM7PN2UTmyRMuePomtR5Ph8bVtKmUaKWFaxlcIzJ6HaBkw6B_cif6R6JMOn9wTWlC7TTiMMXyNCR4akVhLHu54-iT1xiOruO6aZ6abukpopDT7SoIFp5ogX8TMcWMtvuLF-ArYnF1u3IQDSuNBY2fEacuBeBM8d-4Rw4rhaEhJ9AHt7FdXifaFIAnSwB4cl4pqY_8LNjmMhUcp0MLl8KLJY7I3A8fkoMZHjU-dtIJytBM2gyQH6rq7xO9vukZaliZydatwzYIJ-M6sogDjEuD2Vhx9ft_TAeBOGXOVnXc1pWZXPcw8QtzynkkBSTk8k7f4j4FpkhkwEstnyLGAtkOIzadsWFo4d1IDBqQBl8h2CnNQe64Ln0XqYWJGlpzZJiOu3lpigHkcQZCDqme5ZWZXZM26pubjMS0OiRPH2Mje7pl-Gf8Co38K0xv5eR_U2VQmEUQjOWTEcB0rDl5WBGwrjjMESbsZ5sibzTSC3fIT0RCKo1l9H65SsrpRAU6AgWQW_ww8gQmQIDr-r-qIUiz4ZlKs8MHL4d8dG-E8tLYWwEIa-kpilFU7RM6gwccEMzCUYIHL4d0dLnjd7IIp2gDljByYHzcxHfS3Tzl6qmLC-n2yqYKuDGW1aA1TkIdwLdQY51DyuaQQQu1cLiGMOWx3ekIeVCgrKArUpZ0zZh0x3Irg8cgfqZE5DkRWq-QIdDP_WBwGXijaoWOJH5XzzEGsy-4jYtWAmJ5QmGi186Zui1X1gGLEsTMIKxLthpb3G1Dn2hZcNO08GIYXUR3Bp8wrPMsOpEA4a2trkmMtY6lipX4AltUTUlNh8ezz-2UO56yZPvM9KJEjOw1DeyhSsKf77KpQIpzMadaby4-A3AVCQi4NCVfIdEAyy4N_QoAJmeRVcVeFMD5BdLr18xWCJ-xkyDK4VuTLiZ29j2RkKRiagr0CZdJ1tvJhJ0c4FeV0RXLeh7p-jsC-5K0LtS5wvMqc77w9Em_QK-SffnuBYAAA)
+
+(These require a Motley Fool subscription to view)
+[Best Buys Now](https://www.fool.com/premium/rule-breakers/coverage/tags/best_buys_now)
+[Recommendations](https://www.fool.com/premium/rule-breakers/recommendations/active/)
+[Conviction](https://www.fool.com/premium/screener/)
