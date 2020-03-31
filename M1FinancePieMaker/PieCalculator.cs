@@ -8,13 +8,13 @@ namespace M1FinancePieMaker
 {
     public class PieCalculator
     {
-        private static string _bestBuysNow = @"C:\Users\Josh\Documents\Investing\BestBuysNow.csv";
+        //private static string _bestBuysNow = @"C:\Users\Josh\Documents\Investing\BestBuysNow.csv";
         //private static string _buyRecs = @"C:\Users\Josh\Documents\Investing\BuyRecs.csv";
         //private static string _joshPics = @"C:\Users\Josh\Documents\Investing\JoshsPics.csv";
         //private static string _convictionPath = @"C:\Users\Josh\Documents\Investing\Conviction.csv";
         //private static string _bestBuysNow = @"..\BestBuysNow.csv";
-        private static string _buyRecs = @"C:\Users\Josh\Documents\Investing\BuyRecs.csv";
-        private static string _joshPics = @"C:\Users\Josh\Documents\Investing\JoshsPics.csv";
+        //private static string _buyRecs = @"C:\Users\Josh\Documents\Investing\BuyRecs.csv";
+        //private static string _joshPics = @"C:\Users\Josh\Documents\Investing\JoshsPics.csv";
         private static string _convictionPath = @"C:\Users\Josh\Documents\Investing\Conviction.csv";
         private const float _bestBuyPoints = 1;
         private const float _buyRecPoints = 5.3F;
@@ -28,9 +28,10 @@ namespace M1FinancePieMaker
             var bestBuys = GetRecs(GetLocalPath("BuyRecs.csv"), _bestBuyPoints);
             //var buyRecs = GetRecs(_buyRecs, _buyRecPoints);
             var buyRecs = GetRecs(GetLocalPath("BestBuysNow.csv"), _buyRecPoints);
-            var joshPics = GetJoshPics(_joshPics);
+            //var joshPics = GetMyPersonalPics(_joshPics);
+            var myPics = GetMyPersonalPics(GetLocalPath("MyPics.csv"));
 
-            var combined = bestBuys.Concat(buyRecs).Concat(joshPics).ToList();
+            var combined = bestBuys.Concat(buyRecs).Concat(myPics).ToList();
 
             var grouped = combined.GroupBy(rec => rec.Ticker).ToList();
 
@@ -69,7 +70,8 @@ namespace M1FinancePieMaker
         private string GetLocalPath(string fileName)
         {
             var dir = Directory.GetCurrentDirectory();
-            return Path.GetFullPath(Path.Combine(dir, @$"..\..\..\{fileName}"));
+            //return Path.GetFullPath(Path.Combine(dir, @$"..\..\..\..\{fileName}"));
+            return Path.GetFullPath(Path.Combine(dir, @$"..\..\..\..\Data\{fileName}"));
         }
 
         private List<MotleyFoolRec> GetRecs(string path, float points)
@@ -87,7 +89,7 @@ namespace M1FinancePieMaker
             return bestBuys;
         }
 
-        private List<MotleyFoolRec> GetJoshPics(string path)
+        private List<MotleyFoolRec> GetMyPersonalPics(string path)
         {
             var bestBuys = new List<MotleyFoolRec>();
             using (var file = new StreamReader(path))
